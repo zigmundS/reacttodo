@@ -1,14 +1,14 @@
 import React from 'react';
 
-function Input({ name }) {
+function Input({ name, index, status }) {
 
     return (
-        <div className="active">
+        <li className={status ? 'active' : 'inactive'} key={index}>
             <input type="checkbox" name="checkTask"/>
             <span>{name}</span>
             <button>edit</button>
             <button>delete</button>
-        </div>
+        </li>
     )
 }
 
