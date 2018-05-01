@@ -75,6 +75,10 @@
   color: green;
 }
 
+.blockAdd {
+  display: none;
+}
+
 .completed {
   color: grey;
 }

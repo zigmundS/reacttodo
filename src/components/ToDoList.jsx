@@ -110,7 +110,7 @@ export default class ToDoList extends Component {
 
                 <div className="btnAdd">
                     <a href="#" onClick={() => {
-                        this.state.userInput = prompt('name', '')
+                        this.state.userInput = prompt('Название задачи', '')
                         this.addToList()
                     }
                     }>Добавить задачу</a>
