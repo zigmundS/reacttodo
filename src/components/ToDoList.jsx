@@ -111,14 +111,6 @@ export default class ToDoList extends Component {
         return (
             <div className="main">
                 <h2>Задачи</h2>
-
-                <div className="btnAdd">
-                    <a href="#" onClick={() => {
-                        this.state.userInput = prompt('Название задачи', '')
-                        this.addToList()
-                    }
-                    }>Добавить задачу</a>
-                </div>
                 <div className="blockAdd">
                     <input
                         type="text"
