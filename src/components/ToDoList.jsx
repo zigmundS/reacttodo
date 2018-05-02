@@ -7,7 +7,7 @@ export default class ToDoList extends Component {
         super(props)
         this.state = {
             userInput: '',
-            list: [
+            list: JSON.parse(localStorage.getItem('todos')) || [
                 {
                     title: 'Задача 1',
                     status: true,
@@ -50,6 +50,7 @@ export default class ToDoList extends Component {
             status: true,
             index: this.state.list.length + 1
         })
+        localStorage.setItem('todos', JSON.stringify(listArray));
         this.setState({
             list: listArray,
             userInput: ''
@@ -61,6 +62,7 @@ export default class ToDoList extends Component {
         let listArray = this.state.list
         if (index > -1) {
             listArray.splice(index, 1)
+            localStorage.setItem('todos', JSON.stringify(listArray));
             this.setState({
                 list: listArray
             })
@@ -73,6 +75,7 @@ export default class ToDoList extends Component {
         let listArray = this.state.list
         if (index > -1) {
             listArray[index].title = title
+            localStorage.setItem('todos', JSON.stringify(listArray));
             this.setState({
                 list: listArray
             })
@@ -95,6 +98,7 @@ export default class ToDoList extends Component {
         newItem.status = !item.status
         let listArray = this.state.list
         listArray[listArray.indexOf(this.item)] = newItem
+        localStorage.setItem('todos', JSON.stringify(listArray));
         this.setState({
             list: listArray
         })
