@@ -44,11 +44,11 @@
   padding: 5px;
 }
 
-.main button {
+/* .main button {
   border: none;
   background: none;
   text-decoration: underline;
-}
+} */
 
 .btnAdd {
   width: 300px;
@@ -63,6 +63,10 @@
   display: block;
 }
 
+.btnAdd {
+  display: none;
+}
+
 .blockAdd {
   width: 300px;
   margin: 10px auto;
@@ -72,8 +76,11 @@
   color: green;
 }
 
-.blockAdd {
-  display: none;
+.blockAdd input[type="text"] {
+  width: 150px;
+  font-size: 16px;
+  padding: 5px 10px;
+  margin-right: 5px;
 }
 
 .completed {
@@ -84,10 +91,31 @@
   border: 1px solid grey;
 }
 
+.completed ul li span {
+  text-decoration: line-through;
+}
+
 .completed button {
   color: grey;
 }
 
 .btnDelete {
   color: red;
+  float: right;
+}
+
+.btnEdit {
+  float: right;
+}
+
+.itemTitle {
+  float: left;
+}
+
+.unactive span {
+  float: left;
+}
+
+.unactive button {
+  float: right;
 }

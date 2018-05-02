@@ -10,13 +10,9 @@ export default class ListItem extends Component {
     render() {
         return (
             <li key={this.props.item.index} className={this.props.item.status ? "active" : "unactive"}>
-                <input
-                    type="checkbox"
-                    name="checkTask"
-                    onChange={() => this.props.toogleStatus(this.props.item)} />
-                <span>{this.props.item.title}</span>
-                <button onClick={this.editItem.bind(this)}>Редактировать</button>
+                <span onClick={() => this.props.toogleStatus(this.props.item)} className="itemTitle">{this.props.item.title}</span>
                 <button onClick={() => this.props.deleteItem(this.props.item)} className="btnDelete">Удалить</button>
+                <button onClick={this.editItem.bind(this)} className="btnEdit">Редактировать</button>
             </li>
         )
     }
